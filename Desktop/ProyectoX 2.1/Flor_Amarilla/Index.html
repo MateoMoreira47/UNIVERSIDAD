@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        background-color: #000;
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        /* Asegura que el cuerpo ocupe toda la altura de la ventana */
+        display: flex;
+        align-items: center;
+        /* Centra verticalmente los elementos en el cuerpo */
+        justify-content: center;
+        /* Centra horizontalmente los elementos en el cuerpo */
+    }
+
+    .flower {
+        height: 200px;
+        width: 200px;
+        margin: 20px auto;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        position: relative;
+        background-color: #000;
+        /* Fondo negro para toda la página */
+
+        /* Agrega una animación de pulsación */
+        animation: pulsate 2s infinite;
+    }
+
+    .text-above,
+    .text-below {
+        position: absolute;
+        text-align: center;
+        color: #fff;
+        /* Color del texto */
+        font-size: 25px;
+        /* Tamaño del texto */
+    }
+
+    .text-above {
+        top: -60px;
+        /* Ajusta la posición vertical del texto arriba de la flor */
+    }
+
+    .text-below {
+        bottom: -60px;
+        /* Ajusta la posición vertical del texto debajo de la flor */
+    }
+
+    @keyframes pulsate {
+        0% {
+            transform: scale(1.5);
+        }
+
+        50% {
+            transform: scale(1.6);
+        }
+
+        100% {
+            transform: scale(1.5);
+        }
+    }
+
+    .mid {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+
+        background: radial-gradient(circle, #000, #ff5e00, #000);
+
+        z-index: 4;
+
+        background-size: 5px 5px;
+
+        filter: drop-shadow(0 0 8px #682600);
+    }
+
+    .Petal1 {
+        position: absolute;
+        left: 40px;
+        z-index: 3;
+
+        width: 120px;
+        height: 30px;
+        border-radius: 50%;
+
+        background: radial-gradient(circle, #ff5e00, #ffbb00);
+
+        filter: drop-shadow(0 0 5px #e05200);
+    }
+
+    .Petal1.p1 {
+        transform: rotate(22.5deg);
+    }
+
+    .Petal1.p2 {
+        transform: rotate(67.5deg);
+    }
+
+    .Petal1.p3 {
+        transform: rotate(110.5deg);
+    }
+
+    .Petal1.p4 {
+        transform: rotate(157.5deg);
+    }
+
+    .Petal2 {
+        position: absolute;
+        left: 0;
+        z-index: 2;
+
+        width: 200px;
+        height: 40px;
+        border-radius: 50%;
+
+        background: radial-gradient(circle, #ff5e00, #fbd702);
+
+        filter: drop-shadow(0 0 5px #e05200);
+    }
+
+    .Petal2.p1 {}
+
+    .Petal2.p2 {
+        transform: rotate(90deg);
+    }
+
+    .Petal2.p3 {
+        transform: rotate(45deg);
+    }
+
+    .Petal2.p4 {
+        transform: rotate(135deg);
+    }
+
+    .Petal3 {
+        position: absolute;
+        left: 0px;
+        z-index: 1;
+
+        width: 200px;
+        height: 40px;
+        border-radius: 50%;
+
+        background: radial-gradient(circle, #ff5e00, #fbd702);
+
+        filter: drop-shadow(0 0 2px #fbd702);
+    }
+
+    .Petal3.p1 {
+        transform: rotate(22.5deg);
+    }
+
+    .Petal3.p2 {
+        transform: rotate(67.5deg);
+    }
+
+    .Petal3.p3 {
+        transform: rotate(110.5deg);
+    }
+
+    .Petal3.p4 {
+        transform: rotate(157.5deg);
+    }
+
+    .contenedor {
+
+        width: 100vw;
+        height: 100vh;
+        text-align: center;
+    }
+
+    p {
+        font-size: xx-large;
+        color: #fff;
+        padding: 8%;
+    }
+
+    button {
+        border: 1px solid #2e518b;
+        /*anchura, estilo y color borde*/
+        padding: 10px;
+        /*espacio alrededor texto*/
+        background-color: #2e518b;
+        /*color botón*/
+        color: #ffffff;
+        /*color texto*/
+        text-decoration: none;
+        /*decoración texto*/
+        text-transform: uppercase;
+        /*capitalización texto*/
+        font-family: 'Helvetica', sans-serif;
+        /*tipografía texto*/
+        border-radius: 50px;
+        /*bordes redondos*/
+    }
+
+    #yesBtn {
+        transform: translate(-100%, 0);
+    }
+
+    #noBtn {
+        position: absolute;
+    }
+
+    @keyframes animat {
+        0% {
+            transform: scale(0);
+        }
+
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    @keyframes fanimado {
+        0% {
+            background-image: 0% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    .audio-player {
+        background-color: #fff;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        max-width: 485px;
+        margin: 0 auto;
+    }
+
+    audio {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    audio::-webkit-media-controls-panel {
+        background-color: #f4f4f4;
+        border-radius: 10px;
+    }
+
+    #play-pause {
+        display: block;
+        margin-top: 10px;
+        padding: 10px 20px;
+        background-color: #007BFF;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    #play-pause:hover {
+        background-color: #0056b3;
+    }
+
+    * {
+        margin: 0;
+    }
+
+    .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 80%;
+            text-align: center;
+        }
+        .custom-alert {
+        background-color: #ffcc00;
+        border: 2px solid #ff9900;
+        padding: 10px;
+        border-radius: 5px;
+        font-size: 18px;
+        color: #333;
+        text-align: center;
+        max-width: 400px;
+        margin: 0 auto;
+        margin-top: 20px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    }
+</style>
+
+<body>
+    <div class="contenedor">
+        <p></p>
+        <br><br>
+        <br><br>
+        <div>
+            <div class="flower">
+                <div class="text-above">¿Que opinas de esta flor amarilla?</div>
+                <div class="mid">
+                </div>
+                <div class="Petal1 p1">
+                </div>
+                <div class="Petal1 p2">
+                </div>
+                <div class="Petal1 p3">
+                </div>
+                <div class="Petal1 p4">
+                </div>
+                <div class="Petal2 p1">
+                </div>
+                <div class="Petal2 p2">
+                </div>
+                <div class="Petal2 p3">
+                </div>
+                <div class="Petal2 p4">
+                </div>
+                <div class="Petal3 p1">
+                </div>
+                <div class="Petal3 p2">
+                </div>
+                <div class="Petal3 p3">
+                </div>
+                <div class="Petal3 p4">
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <br><br>
+
+        <br><br>
+        <button id="yesBtn">SI, me encanta</button>
+        <button id="noBtn">NO me gusta</button>
+    </div>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <p class="custom-alert">Querida Nombre de la pelada, así como estas flores amarillas iluminan mi día con su cálido resplandor, tú iluminas mi vida con tu presencia radiante y llena de alegría. Cada día que paso a tu lado es un regalo que atesoro profundamente. Tu sonrisa, tu amabilidad y tu compañía hacen que mi mundo sea más hermoso.<br><br>
+            Eres la persona que me hace muy feliz. Con cariño y admiración, tu buen amigo el hombre araña</p>
+            <button id="modalBtn">Cerrar</button>
+        </div>
+    </div>
+    <script>
+        const yesBtn = document.querySelector('#yesBtn');
+        const noBtn = document.querySelector('#noBtn');
+        const modal = document.querySelector('#myModal');
+        const modalBtn = document.querySelector('#modalBtn');
+
+        yesBtn.addEventListener('click', function () {
+            modal.style.display = 'block'; // Mostrar el cuadro de diálogo modal
+        });
+
+        modalBtn.addEventListener('click', function () {
+            modal.style.display = 'none'; // Cerrar el cuadro de diálogo modal
+        });
+
+        noBtn.addEventListener('mouseover', function () {
+            const randomX = Math.random() * 100;
+            const randomY = Math.random() * 100;
+            noBtn.style.top = randomY + '%';
+            noBtn.style.left = randomX + '%';
+            noBtn.style.transform = `translate(-${randomX}%, -${randomY}%)`;
+        });
+    </script>
+</body>
+
+</html>

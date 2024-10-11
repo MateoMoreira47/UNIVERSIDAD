@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Javascript</title>
+    <script type ="text/javascript" src="js/formulario.js"></script>
+    <link rel="stylesheet" href="css.css" type="text/css"/>
+</head>
+<body>
+    <h1>Llene el formulario</h1>
+
+    <div class= "box">
+        <form action="#" method="POST" id="formulario" onsubmit="return false;">
+            <br><label for="nombre">Nombre:</label> <br/>
+            <input type="text" name="nombre" id="nombre">
+            <span id="error_nombre"></span>
+
+            
+
+            <br><label for="apellidos">Apellidos:</label> <br/>
+            <input type="text" name="apellidos" id="apellidos">
+
+            <br><label for="edad">Edad:</label> <br/>
+            <input type="text" name="edad" id="edad">
+            <br/>
+
+            <br><label for="cedula">Cédula:</label> <br/>
+            <input type="text" name="cedula" id="cedula">
+            <br/>
+            <input type="submit" value="Enviar" id="submit"/>
+        </form>
+    </div>
+    
+    <div class="box dashed">
+        <h3>Informacion del usuario</h3>
+       <hr>
+        <p id="p_nombre">
+            Nombre: <span></span>
+        </p>
+        <p id="p_apellidos">
+            Apellidos: <span></span>
+        </p>
+        <p id="p_edad">
+            Edad: <span></span>
+        </p>
+        <p id="p_cedula">
+            Cedula: <span></span>
+        </p>
+    </div>
+
+
+</body>
+</html>
